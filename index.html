@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.2.2/core.css">
+    <script type="module" src=https://pyscript.net/releases/2025.2.2/core.js></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body{
+			background-color: #E3D4CF;
+		}
+        .box{
+            text-align: center;
+            margin: 40px;
+            padding: 40px;
+        }
+		nav{
+			background-color: #524F50;
+            font-family: 'Courier New', Courier, monospace;
+		}
+		.container{
+            background:  #524F50;
+            min-height: 700px;
+            max-width: 600px;
+			border-radius: 20px;
+            color: #E3D4CF;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0 auto;
+            font-weight: 700;
+		}
+        h1{
+            color: #524F50;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #barcode{
+            height: 75px;
+            max-width: 432px;
+            margin: 0 auto;
+        }
+        #boxes{
+            margin-bottom: 100px;
+        }
+        #menu{
+            margin-bottom: 100px;
+        }
+        label, #category, #item{
+			margin: 10px 0 5px;
+			display: block;
+		}
+        #category, #item{
+			display: inline-flex;
+			align-items: center;
+			margin-right: 10px;
+			font-weight: normal;
+            font-size: 25px;
+            width: 500px;
+            max-width: 75%;
+		}
+        select, #generate{
+            border: 1px solid #ccc;
+            color: #524F50;
+			border-radius: 10px;
+			padding: 5px;
+			margin-bottom: 15px;
+            background-color: #E3D4CF;
+        }
+        #generate{
+            text-align: center;
+            display: inline-flex;
+			align-items: center;
+			margin-right: 10px;
+			font-weight: normal;
+            font-size: 25px;
+            width: 250px;
+            max-width: 75%;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="Logo.png" alt="logo" height="50px"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="mynavbar">
+				<ul class="navbar-nav me-auto">
+                    <li class="nav-item" style="font-size: 25px;">
+						<a style="color: #5D0101" class="nav-link" href="index.html" target="_self">Receipt Generator</a>
+					</li>
+                    <li class="nav-item" style="font-size: 25px;">
+						<a style="color: #E3D4CF" class="nav-link" href="index.html" target="_self"><u>SKU Generator</u></a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+    <div class="box">
+        <h1><u>SKU Generator</u></h1><br>
+        <div class="container">
+            <div id="menu">
+                <label for="category" style="font-size: 30px; font-weight: lighter;"><u>Category</u></label>
+			    <select id="category" name="dropdown">
+				    <option value="All">All</option>
+				    <option value="Drinks">Drinks</option>
+				    <option value="Cakes">Cakes</option>
+			    </select><br>
+                <label for="item" style="font-size: 30px; font-weight: lighter;"><u>Product Name</u></label>
+			    <select id="item" name="dropdown">
+				    <option id="item" class="Option1" value="All">All</option>
+				    <option id="item" class="Option2" value="Espresso">Espresso</option>
+				    <option id="item" class="Option3" value="Latte">Latte</option>
+                    <option id="item" class="Option4" value="Caramel Macchiato">Caramel Macchiato</option>
+				    <option id="item" class="Option5" value="World's Best Hot Chocolate">World's Best Hot Chocolate</option>
+                    <option id="item" class="Option6" value="Horchata">Horchata</option>
+				    <option id="item" class="Option7" value="Strawberry Shorcake">Strawberry Shorcake</option>
+                    <option id="item" class="Option8" value="Carrot Cake">Carrot Cake</option>
+				    <option id="item" class="Option9" value="Chocolate Cake">Chocolate Cake</option>
+                    <option id="item" class="Option10" value="Red Velvet Cake">Red Velvet Cake</option>
+				    <option id="item" class="Option11" value="Blueberry Cheesecake">Blueberry Cheesecake</option>
+			    </select><br><br>
+
+                <button id="generate" style="font-weight: lighter; text-align: center;" py-click="generate">Generate SKU!</button><br><br>
+                <img id="barcode" src="barcode (1).png">
+                <div id="output">SKU should appear here!</div>
+            </div><br>
+        </div>
+    </div>
+    
+
+    <script type="py" src="./main.py"></script>
+
+</body>
+</html>
